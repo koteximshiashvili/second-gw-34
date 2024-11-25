@@ -1,0 +1,200 @@
+@import url('https://fonts.googleapis.com/css2?family=Figtree:ital,wght@0,900;1,900&family=Host+Grotesk:ital,wght@0,300..800;1,300..800&family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Noto+Sans:ital,wght@0,900;1,900&family=Open+Sans:ital,wght@0,800;1,800&family=Raleway:wght@900&display=swap');
+*{
+    font-family: 'Noto sans';
+}
+body {
+    background-color: #231d2b;
+    height: 100vh;
+}
+.h1{
+    font-size: 40px;
+    color: white;
+}
+.container {
+    position: absolute;
+    position: relative;
+    top: 5%;
+    left: 33%;
+    width: 600px;
+    height: 350px;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    background: #1c1f2b;
+    color: white;
+}
+.container::after, .container::before {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-image: conic-gradient( blue, red, orange, blue); 
+    top: 50%;
+    left: 50%;
+    translate: -50% -50%;
+    z-index: -3;
+    padding: 5px;
+    border-radius: 10px;
+}
+.container::before{
+    filter: blur(3rem);
+}
+
+h1 {
+    text-align: center;
+}
+
+input[type="text"] {
+    width: 400px;
+    padding: 10px;
+    margin-right: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+button {
+    padding: 10px 15px;
+    border: none;
+    background: #5cb85c;
+    color: white;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+button:hover {
+    background: #4cae4c;
+}
+
+ul {
+    list-style-type: none;
+}
+
+li {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    border-bottom: 1px solid #eee;
+}
+.delete{
+    position: relative;
+    top: 10px;
+    background-color: transparent;
+    color: white;
+    font-size: 40px;
+    transition: 2s linear;
+}
+.delete:hover{
+    scale: 1.3;
+    background-color: transparent;
+}
+.random-element {
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    background-color: transparent;
+    border-radius: 10px;
+    border: 10px solid white;
+    animation: move 5s ease-in-out infinite;
+    z-index: -1;
+}
+.background{
+    position: relative;
+    bottom: 80%;
+    width: 100%;
+    height: 35%;
+    z-index: 99;
+}
+.background img{
+    width: 100%;
+    height: 100%;
+    z-index: 2;
+}
+.background1{
+    width: 100%;
+    height: 100%;
+    z-index: -99;
+}
+
+@keyframes move {
+    0% {
+        transform: translateX(10px) translateY(10px) rotate(30deg);
+        opacity: 1;
+    }
+    25% {
+        transform: translateX(100px) translateY(100px) rotate(90deg);
+        opacity: 0.8;
+    }
+    50% {
+        transform: translateX(-100px) translateY(-100px) rotate(180deg);
+        opacity: 0.6;
+    }
+    75% {
+        transform: translateX(200px) translateY(200px) rotate(270deg);
+        opacity: 0.4;
+    }
+    100% {
+        transform: translateX(0) translateY(0) rotate(360deg);
+        opacity: 1;
+    }
+}
+
+
+
+@media (max-width: 768px) {
+    .container {
+        width: 90%;
+        padding: 20px;
+        top: 20%;
+    }
+
+    h1.add-task {
+        font-size: 1.5rem;
+    }
+
+    input[type="text"] {
+        width: 100%;
+        padding: 10px;
+    }
+
+    button {
+        width: 100%;
+        font-size: 1.2rem;
+    }
+
+    ul {
+        margin-top: 10px;
+    }
+
+    li {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 10px;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .container {
+        width: 100%;
+        padding: 15px;
+    }
+
+
+    input[type="text"] {
+        padding: 8px;
+    }
+
+    button {
+        width: 100%;
+        font-size: 1rem;
+    }
+
+    li {
+        font-size: 14px;
+        padding: 8px;
+    }
+
+    .delete {
+        font-size: 1.2rem;
+    }
+}
